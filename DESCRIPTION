@@ -1,6 +1,6 @@
 Package: placeholder
 Type: Book
-Title: Does not matter.
+Title: 오픈 통계 교과서
 Version: 0.0.1
 Imports: bookdown
 Remotes: rstudio/bookdown

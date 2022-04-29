@@ -28,7 +28,7 @@ unlink('_book', recursive = TRUE)
 
 # default formats
 formats = c(
-  'bookdown::pdf_book', 'bookdown::epub_book', 'bookdown::gitbook'
+  'bookdown::gitbook'
 )
 
 # render the book to all formats unless they are specified via command-line args
@@ -38,4 +38,4 @@ for (fmt in formats) {
   if (res != 0) stop('Failed to compile the book to ', fmt)
 }
 
-bookdown::publish_book('bookdown-demo')
+bookdown::publish_book('textbook')

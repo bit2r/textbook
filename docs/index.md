@@ -2,7 +2,7 @@
 title: "오픈 통계 교과서"
 subtitle: "고등학생"
 author: "한국 알(R) 사용자회"
-date: "`r Sys.Date()`"
+date: "2022-04-29"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
