@@ -7,6 +7,7 @@ language:
     chapter_name: !expr function(i) paste( i, ". ")
 delete_merged_file: true
 
+
 new_session: yes
 
 rmd_files: [
