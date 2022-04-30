@@ -1,3 +1,13 @@
 오픈-통계-교과서
+오픈-통계-교과서-개요
+선행-통계-교과서
+case
+workflow
+data
+data-analytics
+statistics
+communication
+future
+무료-교재
 reference-book
 reference-news

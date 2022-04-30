@@ -1,6 +1,9 @@
 bookdown::gitbook:
   css: style.css
   config:
+    fontsettings:
+      family: MaruBuri
+      size: 2
     toc:
       before: |
         <li><a href="./">고등학생 통계 교과서</a></li>
