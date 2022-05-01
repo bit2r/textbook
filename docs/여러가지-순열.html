@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>8 . 여러가지 순열 | 오픈 통계 교과서</title>
+<meta name="author" content="한국 알(R) 사용자회">
+<meta name="description" content='원순열 중복순열  8.1 원순열 원수열은 서로 다른 것을 원형으로 배열할 때 경우의 수가 얼마나 될지 따지는 것이다.  8.1.1 A → B → C → D → A  {"x":{"diagram":"\n graph LR\n  A--&gt;B\n  B--&gt;C\n  C--&gt;D\n  D--&gt;A\n"},"evals":[],"jsHooks":[]}  8.1.2 B →...'>
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="8 . 여러가지 순열 | 오픈 통계 교과서">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/fig/BitStat_logo.png">
+<meta property="og:description" content='원순열 중복순열  8.1 원순열 원수열은 서로 다른 것을 원형으로 배열할 때 경우의 수가 얼마나 될지 따지는 것이다.  8.1.1 A → B → C → D → A  {"x":{"diagram":"\n graph LR\n  A--&gt;B\n  B--&gt;C\n  C--&gt;D\n  D--&gt;A\n"},"evals":[],"jsHooks":[]}  8.1.2 B →...'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="8 . 여러가지 순열 | 오픈 통계 교과서">
+<meta name="twitter:description" content='원순열 중복순열  8.1 원순열 원수열은 서로 다른 것을 원형으로 배열할 때 경우의 수가 얼마나 될지 따지는 것이다.  8.1.1 A → B → C → D → A  {"x":{"diagram":"\n graph LR\n  A--&gt;B\n  B--&gt;C\n  C--&gt;D\n  D--&gt;A\n"},"evals":[],"jsHooks":[]}  8.1.2 B →...'>
+<meta name="twitter:image" content="/fig/BitStat_logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/d3-3.3.8/d3.min.js"></script><script src="libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/chromatography-0.1/chromatography.js"></script><script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="고등학생">오픈 통계 교과서</a>:
+        <small class="text-muted">고등학생</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> 오픈 통계 교과서</a></li>
+<li><a class="" href="case.html"><span class="header-section-number">2</span> 사례 1</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">3</span> 제작흐름</a></li>
+<li><a class="" href="data-stat.html"><span class="header-section-number">4</span> 통계와 데이터</a></li>
+<li><a class="" href="future.html"><span class="header-section-number">5</span> 통계와 미래</a></li>
+<li><a class="" href="sat.html"><span class="header-section-number">6</span> 역대 수능문제</a></li>
+<li><a class="" href="prob-case.html"><span class="header-section-number">7</span> 경우의 수</a></li>
+<li><a class="active" href="%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80-%EC%88%9C%EC%97%B4.html"><span class="header-section-number">8</span> 여러가지 순열</a></li>
+<li><a class="" href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="여러가지-순열" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8 . </span> 여러가지 순열<a class="anchor" aria-label="anchor" href="#%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80-%EC%88%9C%EC%97%B4"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li>원순열</li>
+<li>중복순열</li>
+</ul>
+<div id="circula-permutation" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> 원순열<a class="anchor" aria-label="anchor" href="#circula-permutation"><i class="fas fa-link"></i></a>
+</h2>
+<p>원수열은 서로 다른 것을 원형으로 배열할 때 경우의 수가 얼마나 될지 따지는 것이다.</p>
+<div id="a-b-c-d-a" class="section level3" number="8.1.1">
+<h3>
+<span class="header-section-number">8.1.1</span> A → B → C → D → A<a class="anchor" aria-label="anchor" href="#a-b-c-d-a"><i class="fas fa-link"></i></a>
+</h3>
+<div id="htmlwidget-e50f983a58b120b874a2" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e50f983a58b120b874a2">{"x":{"diagram":"\n  graph LR\n    A-->B\n    B-->C\n    C-->D\n    D-->A\n"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="b-a-d-c-b" class="section level3" number="8.1.2">
+<h3>
+<span class="header-section-number">8.1.2</span> B → A → D → C → B<a class="anchor" aria-label="anchor" href="#b-a-d-c-b"><i class="fas fa-link"></i></a>
+</h3>
+<div id="htmlwidget-7150063f4ad5bcb992e6" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7150063f4ad5bcb992e6">{"x":{"diagram":"\n  graph LR\n    B-->A\n    A-->D\n    D-->C\n    C-->B\n"},"evals":[],"jsHooks":[]}</script><p>이와 같이 4가지 경우가 있을 때 이를 조합하면 몇가지 경우의 수가 생기게 될까?</p>
+<ol style="list-style-type: decimal">
+<li>4가지 문자 중 하나를 선택한다.</li>
+<li>앞서 4개중 하나를 뺐기 때문에 3가지중 하나를 선택한다.</li>
+<li>앞서 3개중 하나를 뺐기 때문에 2가지중 하나를 선택한다.</li>
+<li>마지막 남은 한가지를 선택한다.</li>
+</ol>
+<p>따라서, <span class="math inline">\(4 \times 3 \times 2 \times 1 = 24\)</span></p>
+<p>하지만 원으로 배열하면 같은 것이 4가지 있기 때문에 원형으로 배열하는 경우의 수는
+다음과 같다.</p>
+<p><span class="math display">\[ \frac{4!}{4} = \frac{4 \times 3 \times 2 \times 1}{4} = 3 \times 2 \times 1 = 6\]</span></p>
+<p>이것을 일반화하면 다음과 같다.</p>
+<p><span class="math display">\[\frac{n!}{n} = (n-1)!\]</span></p>
+</div>
+</div>
+<div id="permutations" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> 중복순열<a class="anchor" aria-label="anchor" href="#permutations"><i class="fas fa-link"></i></a>
+</h2>
+<p>자전거 도난방지를 위해서 체인형태로 된 자물쇠 비빌번호는 통상 4자리로 구성된다.
+4자리로 구성된 자전거 비밀번호 총 조합의 수는 몇개나 될까?</p>
+<p>각 자리는 0~9까지 총 10개 숫자로 구성된다. 따라서 각각을 달리 설정하여 나오는 총
+비밀번호 경우의 수는 다음과 같이 구할 수 있다.</p>
+<p><span class="math inline">\(10 \times 10 \times 10 \times 10 = 10^4\)</span></p>
+<p>상기 방식을 일반화할 수 있다.</p>
+<ol style="list-style-type: decimal">
+<li>10자리가 아니라 <span class="math inline">\(n\)</span> 자리로 확장하는 경우
+<ul>
+<li><span class="math inline">\(n \times n \times n \times n = n^4\)</span></li>
+</ul>
+</li>
+<li>자물쇠 비밀번호 자리수를 4개에서 <span class="math inline">\(r\)</span>개까지 확장하는 경우
+<ul>
+<li><span class="math inline">\(\underbrace{10 \times 10 \times 10 \times 10 \times \cdots \times 10}_\text{r번} = 10^r\)</span></li>
+</ul>
+</li>
+<li>
+<span class="math inline">\(n\)</span> 자리 <span class="math inline">\(r\)</span>번 확장하는 경우
+<ul>
+<li><span class="math inline">\(\underbrace{n \times n \times n \times n \times \cdots \times n}_\text{r번} = n^r\)</span></li>
+</ul>
+</li>
+</ol>
+<p>서로다른 <span class="math inline">\(n\)</span>개에서 <span class="math inline">\(r\)</span>개를 선택하는 중복순열의 수는 수식을 이용하여 표현하면 다음과 같다.</p>
+<p><span class="math display">\[{}_n \Pi _r = \underbrace{n \times n \times n \times n \times \cdots \times n}_\text{r번} = n^r\]</span></p>
+<p>A,B,C,D 네가지 영문자를 조합하는 경우수를 컴퓨터를 이용하여 나열하면 다음과 같다.</p>
+<pre><code>      [,1] [,2] [,3] [,4]
+ [1,] "A"  "B"  "C"  "D" 
+ [2,] "A"  "B"  "D"  "C" 
+ [3,] "A"  "C"  "B"  "D" 
+ [4,] "A"  "C"  "D"  "B" 
+ [5,] "A"  "D"  "B"  "C" 
+ [6,] "A"  "D"  "C"  "B" 
+ [7,] "B"  "A"  "C"  "D" 
+ [8,] "B"  "A"  "D"  "C" 
+ [9,] "B"  "C"  "A"  "D" 
+[10,] "B"  "C"  "D"  "A" 
+[11,] "B"  "D"  "A"  "C" 
+[12,] "B"  "D"  "C"  "A" 
+[13,] "C"  "A"  "B"  "D" 
+[14,] "C"  "A"  "D"  "B" 
+[15,] "C"  "B"  "A"  "D" 
+[16,] "C"  "B"  "D"  "A" 
+[17,] "C"  "D"  "A"  "B" 
+[18,] "C"  "D"  "B"  "A" 
+[19,] "D"  "A"  "B"  "C" 
+[20,] "D"  "A"  "C"  "B" 
+[21,] "D"  "B"  "A"  "C" 
+[22,] "D"  "B"  "C"  "A" 
+[23,] "D"  "C"  "A"  "B" 
+[24,] "D"  "C"  "B"  "A" </code></pre>
+<div id="같은-것이-있는-순열" class="section level3" number="8.2.1">
+<h3>
+<span class="header-section-number">8.2.1</span> 같은 것이 있는 순열<a class="anchor" aria-label="anchor" href="#%EA%B0%99%EC%9D%80-%EA%B2%83%EC%9D%B4-%EC%9E%88%EB%8A%94-%EC%88%9C%EC%97%B4"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+</div>
+<div id="중복조합" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> 중복조합<a class="anchor" aria-label="anchor" href="#%EC%A4%91%EB%B3%B5%EC%A1%B0%ED%95%A9"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="prob-case.html"><span class="header-section-number">7</span> 경우의 수</a></div>
+<div class="next"><a href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80-%EC%88%9C%EC%97%B4"><span class="header-section-number">8</span> 여러가지 순열</a></li>
+<li>
+<a class="nav-link" href="#circula-permutation"><span class="header-section-number">8.1</span> 원순열</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#a-b-c-d-a"><span class="header-section-number">8.1.1</span> A → B → C → D → A</a></li>
+<li><a class="nav-link" href="#b-a-d-c-b"><span class="header-section-number">8.1.2</span> B → A → D → C → B</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#permutations"><span class="header-section-number">8.2</span> 중복순열</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%EA%B0%99%EC%9D%80-%EA%B2%83%EC%9D%B4-%EC%9E%88%EB%8A%94-%EC%88%9C%EC%97%B4"><span class="header-section-number">8.2.1</span> 같은 것이 있는 순열</a></li></ul>
+</li>
+<li><a class="nav-link" href="#%EC%A4%91%EB%B3%B5%EC%A1%B0%ED%95%A9"><span class="header-section-number">8.3</span> 중복조합</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>오픈 통계 교과서</strong>: 고등학생" was written by 한국 알(R) 사용자회. It was last built on 2022-05-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

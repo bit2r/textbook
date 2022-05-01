@@ -17,6 +17,8 @@ rmd_files: [
 
   "77-sat.Rmd",
 
+  "10-cases.Rmd",
+
   "references.Rmd"
 ]
 

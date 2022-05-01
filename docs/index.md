@@ -41,8 +41,8 @@ description: "통계와 데이터 리터러시 함양을 위한 고등학생 오
 
 
 ```{=html}
-<div id="htmlwidget-31f714e31e3d2b639431" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-31f714e31e3d2b639431">{"x":{"diagram":"\ngraph TB    \n    A[사례] --> B[제작흐름]\n    B --> C[데이터]\n    B --> D[분석과 통계]\n    B --> E[커뮤니케이션]\n    C --> G[통계와 미래]\n    D --> G[통계와 미래]\n    E --> G[통계와 미래]\n    "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0a44b1d19cb934b20bb9" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0a44b1d19cb934b20bb9">{"x":{"diagram":"\ngraph TB    \n    A[사례] --> B[제작흐름]\n    B --> C[데이터]\n    B --> D[분석과 통계]\n    B --> E[커뮤니케이션]\n    C --> G[통계와 미래]\n    D --> G[통계와 미래]\n    E --> G[통계와 미래]\n    "},"evals":[],"jsHooks":[]}</script>
 ```
 
 
@@ -53,8 +53,8 @@ description: "통계와 데이터 리터러시 함양을 위한 고등학생 오
 
 
 ```{=html}
-<div id="htmlwidget-28ec80b2e179b115643b" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-28ec80b2e179b115643b">{"x":{"diagram":"\ngraph LR    \n    A[공통<br>수학] --> B[일반 선택과목<br>확률과 통계]\n    B --> G[통계와 사회]\n    B --> C[진로 선택과목<br>실용통계]\n    C -->|자료구조| D[데이터]\n    C -->|알고리즘| E[코딩]\n    C -->|자동화| F[인공지능]\n    "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8c6d175dbcb97f2fccb2" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8c6d175dbcb97f2fccb2">{"x":{"diagram":"\ngraph LR    \n    A[공통<br>수학] --> B[일반 선택과목<br>확률과 통계]\n    B --> G[통계와 사회]\n    B --> C[진로 선택과목<br>실용통계]\n    C -->|자료구조| D[데이터]\n    C -->|알고리즘| E[코딩]\n    C -->|자동화| F[인공지능]\n    "},"evals":[],"jsHooks":[]}</script>
 ```
 
 
