@@ -1,0 +1,116 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+``` {r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE,
+                      comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+```
+
+
+# 역대 수능문제 {#sat}
+
+## 2022년 {#sat-2022}
+
+### 홀수형 23번 {#sat-2022-23}
+
+홀수형 23번 다항식 $(x+2)^7$ 의 전개식에서 $x^5$ 의 계수는? [2점]
+
+$(x+2)^7$ 전개식의 일반항은 ${n \choose r} \times x^{7-r} \times 2^r$ 이므로 $x^5$의 계수는 $r=2$ 를 넣게 되면 ${7 \choose 2} \times x^{7-2} \times 2^2 = \frac{7\times6}{2\times1}\times 4 \times x^5 = 84$
+
+R 코드로 해당 문제를 풀면 ${7 \choose 2}$ 는 `choose()` 함수를 사용해서 계산하고 뒤에 4를 곱해주게 되면 동일한 값을 구할 수 있다.
+
+```{r 2022-sat-23}
+library(tidyverse)
+choose(7, 2) * 4
+```
+
+### 홀수형 24번 {#sat-2022-24}
+
+확률변수 $X$가 이항분포 $B(n, \frac{1}{3}$을 따르고 $V(2X)=40$ 일 때, $n$의 값은? [3점]
+
+-   이항분포 분산: $Var(X) = n \times p \times (1-p) = n \times \frac{1}{3} \times \frac{2}{3} = \frac{2}{9}\times n$
+
+$Var(2X) = 4 \times Var(X) = 40$ 따라서, $Var(X) = 10$
+
+상기 분산은 같기 때문에...
+
+$\frac{2}{9}\times n = 10 \\ n = 45$
+
+### 홀수형 26번 {#sat-2022-26}
+
+1 부터 10 까지 자연수가 하나씩 적혀 있는 10 장의 카드가 들어 있는 주머니가 있다. 이 주머니에서 임의로 카드 3 장을 동시에 꺼낼 때, 꺼낸 카드에 적혀 있는 세 자연수 중에서 가장 작은 수가 4 이하이거나 7 이상일 확률은? [3점]
+
+자연수가 적힌 10장의 카드 중 4이하 7이상을 뽑는 사건을 $A$ 라고 두면, 5와 6을 뽑는 사건은 $A^c$ 여사건으로 정의할 수 있다. 이렇게 하면 10장의 카드 중 동시 뽑은 3장 중에서 가장 작은 수가 4인 경우 혹은 7이상일 경우만 계산하면 되기 때문에 단순해 진다. 즉,
+
+$$P(A) = 1 - P(A^C)$$
+
+3장 중에서 가장 작은 수가 5를 뽑는 경우와 6 을 뽑는 것은 ${}_{5} C_2 + {}_{4} C_2$로 정의된다.
+
+따라서,
+
+$$P(A) = 1 - P(A^C) = 1 - \frac{{}_{5} C_2 +{}_{4} C_2}{{}_{10} C_3} =  \frac{13}{15}$$
+
+상기 확률을 구하는 과정을 코딩으로 통해 작성하여 정확한 값을 구할 수 있다.
+
+```{r 2022-sat-26}
+## 카드 정의 1~10번
+cards <- 1:10
+# [1]  1  2  3  4  5  6  7  8  9 10
+
+## 카드 3개 추출
+three_cards <- sample(cards, 3)
+# [1] 4 5 2
+
+min(three_cards) <=4 || min(three_cards) >= 7 # 3장 카드 중 최소값이 4 이하, 7이상인지 확인
+# TRUE
+
+run_trial <- function() {
+  three_cards <- sample(cards, 3, replace = FALSE)
+  check_card <- ifelse(min(three_cards) <=4 || min(three_cards) >= 7, "5,6 카드 있음", "5,6 카드 없음")
+  return( check_card )
+}
+
+replicate( 10000, run_trial() ) %>% 
+  table() %>% 
+  as_tibble() %>% 
+  mutate(확률 = n / sum(n))
+
+# > 13/15
+# [1] 0.8666667
+```
+
+### 홀수형 27번 {#sat-2022-27}
+
+어느 자동차 회사에서 생산하는 전기 자동차의 1 회 충전 주행 거리는 평균이 $m$ 이고 
+표준편차가 $\sigma$ 인 정규분포를 따른다고 한다. 
+이 자동차 회사에서 생산한 전기 자동차 100 대를 임의추출하여 얻은 1 회 충전 주행 거리의 
+표본평균이 $\bar{x_1}$ 때, 모평균 $m$ 에 대한 신뢰도 95 %의 신뢰구간이 $a \leq m \leq b$다. 이 자동차 회사에서 생산한 전기 자동차 400 대를 임의추출하여 얻은 1 회 충전 주행 거리의 표본평균이 $\bar{x_2}$  때, 모평균 $m$ 에 대한 신뢰도 99 %의 신뢰구간이 $c \leq m \leq d$다. $\bar{x_1} - \bar{x_2} =1.34$ 이고 $a=c$일 때, $b-a$의 값은? (단, 주행 거리의 단위는 km이고, $Z$ 가 표준정규분포를 따르는 확률변수일 때 $P(|Z|\leq1.96)=0.95$, $P(|Z|\leq 2.58)=0.99$로 계산한다.) [3점]
+
+- 100대 임의 추출 표본평균과 신뢰구간
+
+$$\bar{x_1} - 1.96 \times \frac{\sigma}{\sqrt{100}} \leq m \leq \bar{x_1} + 1.96 \times \frac{\sigma}{\sqrt{100}}$$
+
+- 400대 임의 추출 표본평균과 신뢰구간
+
+$$\bar{x_2} - 2.58 \times \frac{\sigma}{\sqrt{400}} \leq m \leq \bar{x_2} + 2.58 \times \frac{\sigma}{\sqrt{400}}$$
+
+- $a=c$ 로부터
+
+$$\bar{x_1} - 1.96 \times \frac{\sigma}{\sqrt{100}} = \bar{x_2} - 2.58 \times \frac{\sigma}{\sqrt{400}}$$
+
+- 단순화 하면, $\bar{x_1} - \bar{x_2} =1.34$로 부터
+
+$$\bar{x_1} - \bar{x_2} = 1.96 \times \frac{\sigma}{10} - 2.58 \times \frac{\sigma}{20}$$
+$$\bar{x_1} - \bar{x_2} = 1.34 = 0.67 \times \frac{\sigma}{10}$$
+
+따라서, $\sigma = 20$
+
+- $\sigma = 20$을 알고 있기 때문에 마지막으로 $b-a$를 구할 수 있다.
+
+$$b-a = 2 \times 1.96 \times \frac{\sigma}{10} = 7.84$$
+
+

@@ -21,7 +21,7 @@ editor_options:
 
 앞선 사례가 어떻게 제작되었는지 과정을 전반적으로 풀어 설명한다.
 
-# 통계와 데이터 {#data}
+# 통계와 데이터 {#data-stat}
 
 ## 데이터 {#data}
 
@@ -32,4 +32,5 @@ editor_options:
 ## 커뮤니케이션 {#communication}
 
 # 통계와 미래 {#future}
+
 
