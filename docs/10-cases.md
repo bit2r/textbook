@@ -25,16 +25,16 @@ editor_options:
 
 
 ```{=html}
-<div id="htmlwidget-e50f983a58b120b874a2" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e50f983a58b120b874a2">{"x":{"diagram":"\n  graph LR\n    A-->B\n    B-->C\n    C-->D\n    D-->A\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-19563f9f0ac16b3a595e" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-19563f9f0ac16b3a595e">{"x":{"diagram":"\n  graph LR\n    A-->B\n    B-->C\n    C-->D\n    D-->A\n"},"evals":[],"jsHooks":[]}</script>
 ```
 
 ### B &rarr; A &rarr; D &rarr; C &rarr; B
 
 
 ```{=html}
-<div id="htmlwidget-7150063f4ad5bcb992e6" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7150063f4ad5bcb992e6">{"x":{"diagram":"\n  graph LR\n    B-->A\n    A-->D\n    D-->C\n    C-->B\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d406df56954abd7a35e0" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d406df56954abd7a35e0">{"x":{"diagram":"\n  graph LR\n    B-->A\n    A-->D\n    D-->C\n    C-->B\n"},"evals":[],"jsHooks":[]}</script>
 ```
 
 이와 같이 4가지 경우가 있을 때 이를 조합하면 몇가지 경우의 수가 생기게 될까?

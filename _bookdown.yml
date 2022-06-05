@@ -13,7 +13,9 @@ new_session: yes
 rmd_files: [
   "index.Rmd",
 
-  "01-case.Rmd",
+  "01-case-study.Rmd",
+
+  "02-data.Rmd",
 
   "77-sat.Rmd",
 
