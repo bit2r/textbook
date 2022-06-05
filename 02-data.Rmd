@@ -46,7 +46,7 @@ DiagrammeR::mermaid(diagram = "
 
 
 
-```{r sampling, eval = TRUE}
+```{r sampling, eval = TRUE, echo = FALSE}
 library(openintro)
 library(extrafont)
 loadfonts(device="win") 
@@ -97,7 +97,7 @@ for (i in these) {
 ```
 
 
-```{r sampling-stratified, eval = TRUE}
+```{r sampling-stratified, eval = TRUE, echo = FALSE}
 
 plot(c(0, 2),
      c(0, 1.1),
@@ -161,7 +161,7 @@ text(0.55, 0.5 + 0.18 - sqrt(0.07),
 
 
 
-```{r sampling-conept}
+```{r sampling-conept, echo = FALSE}
 plot(c(0, 2),
      c(0, 1.1),
      type='n',
