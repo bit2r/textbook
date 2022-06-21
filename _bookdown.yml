@@ -21,7 +21,7 @@ rmd_files: [
 
   "05-prob.Rmd",
 
-  "77-sat.Rmd",
+  # "77-sat.Rmd",
 
   "references.Rmd"
 ]
