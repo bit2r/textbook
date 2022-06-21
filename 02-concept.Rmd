@@ -1,0 +1,103 @@
+---
+output:
+  html_document:
+    theme:
+      version: 4
+editor_options: 
+  chunk_output_type: console
+---
+
+``` {r setup, include=FALSE}
+source("_common.R")
+```
+
+# 귀납적 사고 {#concept}
+
+```{r card-shiny-app}
+library(bs4cards)
+
+shiny_app_list <- list(
+  tibble(
+    title = "모의실험",
+    image = "fig/favicon/favicon-simulation.png",
+    text = "동전, 주사위 던지기 ...",
+    link = "https://r2bit.shinyapps.io/simulation/",
+    footer = "2022-06-12"
+  ) , 
+  tibble(
+    title = "확률분포",
+    image = "fig/favicon/favicon-distribution.png",
+    text = "정규, 이산형, 연속형 분포",
+    link = "https://r2bit.shinyapps.io/dist_shiny/",
+    footer = "2022-06-15"
+  ),  
+  tibble(
+    title = "중심극한정리",
+    image = "fig/favicon/favicon-clt.png",
+    text = "대수의법칙과 중심극한정리",
+    link = "https://r2bit.shinyapps.io/clt_shiny/",
+    footer = "2022-06-17"
+  ),    
+  tibble(
+    title = "실용통계",
+    image = "fig/favicon/hsData-favicon-180x180.png",
+    text = "실용통계 데이터셋과 데이터 분석",
+    link = "https://statkclee.github.io/shiny-apps/flexdashboard/hsData.html",
+    footer = "2022-06-03"
+  ),
+  tibble(
+    title = "숫자 맞추기",
+    image = "fig/favicon/favicon-guess-number.png",
+    text = "기회는 3번, 1~20사이 숫자 맞추기",
+    link = "https://r2bit.shinyapps.io/guess_number/",
+    footer = "2022-06-04"
+  ),
+  tibble(
+    title = "추론: Shiny",
+    image = "fig/favicon/favicon-shiny-infer.png",
+    text = "가설 검정 - 평균, 비율, 분산에 대한 추론",
+    link = "https://r2bit.shinyapps.io/infer_shiny/",
+    footer = "2022-06-10"
+  ),
+  tibble(
+    title = "회귀분석",
+    image = "fig/favicon/favicon-regression.png",
+    text = "선형 회귀 분석",
+    link = "https://r2bit.shinyapps.io/reg_shiny/",
+    footer = "2022-06-16"
+  ),    
+  tibble(
+    title = "t-분포&정규분포",
+    image = "fig/favicon/favicon-tdist.png",
+    text = "t-분포와 표준정규분포 특성",
+    link = "https://r2bit.shinyapps.io/tdist_shiny/",
+    footer = "2022-06-17"
+  ),    
+  tibble(
+    title = "원주율(π)",
+    image = "fig/favicon/life-of-pi.gif",
+    text = "몬테카를로 모의시험 방법으로 원주율 계산",
+    link = "https://r2bit.shinyapps.io/life_of_pi/",
+    footer = "2022-06-02"
+  )
+)
+
+
+shiny_app_tbl <- shiny_app_list %>% 
+  enframe() %>% 
+  unnest(value)
+
+shiny_app_tbl %>% 
+  cards(
+    title = title,
+    text = text,
+    link = link,
+    image = image,
+    footer = footer,
+    layout = "label-left", 
+    width = 3
+  )
+```
+
+
+

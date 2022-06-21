@@ -15,11 +15,13 @@ rmd_files: [
 
   "01-case-study.Rmd",
 
-  "02-data.Rmd",
+  "02-concept.Rmd",
+
+  "03-data.Rmd",
+
+  "05-prob.Rmd",
 
   "77-sat.Rmd",
-
-  "10-cases.Rmd",
 
   "references.Rmd"
 ]

@@ -1,36 +1,93 @@
 ---
-output: html_document
+output:
+  html_document:
+    theme:
+      version: 4
 editor_options: 
   chunk_output_type: console
 ---
 
+``` {r setup, include=FALSE}
+source("_common.R")
+```
+
 # 사례 [^data-science-case-study] {#case-studies}
 
-1. [19세기 영국 코로나19](http://aispiration.com/ds-authoring/ds-world-student.html#4)
-2. [왜 손씻게 되었나?](http://aispiration.com/ds-authoring/ds-world-student.html#5)
-3. [내 신체정보 (정규분포)](http://aispiration.com/ds-authoring/ds-world-student.html#6)
-4. [나폴레옹 러시아 침공](http://aispiration.com/ds-authoring/ds-world-student.html#7)
-5. [백의천사 나이팅게일](http://aispiration.com/ds-authoring/ds-world-student.html#8)
-6. [제2차 세계대전 폭격기](http://aispiration.com/ds-authoring/ds-world-student.html#9)
+```{r card-groups}
+library(bs4cards)
+
+case_study_list <- list(
+  tibble(
+    title = "19세기 코로나",
+    image = "fig/cards/1024px-Punch-A_Court_for_King_Cholera.png",
+    text = "영국 런던에서 19세기 발생한 대규모 전염병",
+    link = "http://aispiration.com/ds-authoring/ds-world-student.html#4",
+    footer = "2022-06-21"
+  ),
+    tibble(
+    title = "손씻기 역사",
+    image = "fig/cards/hand-washing.jpeg",
+    text = "제멜바이스에 의해 시작된 손씻기",
+    link = "http://aispiration.com/ds-authoring/ds-world-student.html#5",
+    footer = "2022-06-21"
+  ),
+  tibble(
+    title = "나는 정상(?)",
+    image = "fig/cards/normal-in-action.png",
+    text = "육군 신체측정 데이터를 통해본 키의 비밀",
+    link = "http://aispiration.com/ds-authoring/ds-world-student.html#6",
+    footer = "2022-06-21"
+  ),
+  tibble(
+    title = "나폴레옹 러시아 침공",
+    image = "fig/cards/about_napoleon.jpg",
+    text = "미나르가 제작한 나폴레옹 러시아 침공 시각화",
+    link = "http://aispiration.com/ds-authoring/ds-world-student.html#7",
+    footer = "2022-06-21"
+  ),
+  tibble(
+    title = "나이팅게일",
+    image = "fig/cards/nightingale.jpg",
+    text = "백의천사 나이팅게일이 유명해진 비밀병기",
+    link = "http://aispiration.com/ds-authoring/ds-world-student.html#8",
+    footer = "2022-06-21"
+  ),
+  tibble(
+    title = "폭격기",
+    image = "fig/cards/Survivorship-bias.png",
+    text = "제2차 세계대전 피탄된 폭격기 데이터가 남긴 질문",
+    link = "http://aispiration.com/ds-authoring/ds-world-student.html#9",
+    footer = "2022-06-21"
+  )
+)
+
+
+case_study_tbl <- case_study_list %>% 
+  enframe() %>% 
+  unnest(value)
+
+case_study_tbl %>% 
+  cards(
+    title = title,
+    text = text,
+    link = link,
+    image = image,
+    footer = footer,
+    layout = "label-left", 
+    width = 3
+  )
+```
+
+
+- [19세기 영국 코로나19](http://aispiration.com/ds-authoring/ds-world-student.html#4)
+- [왜 손씻게 되었나?](http://aispiration.com/ds-authoring/ds-world-student.html#5)
+- [내 신체정보 (정규분포)](http://aispiration.com/ds-authoring/ds-world-student.html#6)
+- [나폴레옹 러시아 침공](http://aispiration.com/ds-authoring/ds-world-student.html#7)
+- [백의천사 나이팅게일](http://aispiration.com/ds-authoring/ds-world-student.html#8)
+- [제2차 세계대전 폭격기](http://aispiration.com/ds-authoring/ds-world-student.html#9)
 
 [^data-science-case-study]: [한국알사용자회, "데이터 과학자의 세계", 2022년 07월 23일 (토), 양천구](http://aispiration.com/ds-authoring/ds-world-student.html#1)
 
 
-
-# 제작흐름 {#workflow}
-
-앞선 사례가 어떻게 제작되었는지 과정을 전반적으로 풀어 설명한다.
-
-# 통계와 데이터 {#data-stat}
-
-## 데이터 {#data-datasets}
-
-## 데이터 분석 {#data-analytics}
-
-## 통계 {#statistics}
-
-## 커뮤니케이션 {#communication}
-
-# 통계와 미래 {#future}
 
 

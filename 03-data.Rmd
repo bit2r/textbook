@@ -4,6 +4,11 @@ editor_options:
   chunk_output_type: console
 ---
 
+``` {r setup, include=FALSE}
+source("_common.R")
+```
+
+
 # 데이터 {#about-data}
 
 
